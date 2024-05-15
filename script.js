@@ -39,3 +39,33 @@ function aVeryBigSum(ar) {
     }
     return sum
 }
+
+// Challenge 5
+
+function diagonalDifference(arr) {
+    let n = arr[0].length
+    let topLeft = arr[0][0]
+    let bottomLeft = arr[n-1][0]
+    let topRight = arr[0][n-1]
+    let bottomRight = arr[n-1][n-1]
+    
+    let sum1 = topLeft + bottomRight
+    let sum2 = topRight + bottomLeft
+    
+    let diagUpRight = 0
+    let diagUpLeft = 0
+    
+    for (let i = 1; i < n-1; i++) {
+        diagUpRight = diagUpRight + arr[n-(i+1)][i]
+        diagUpLeft = diagUpLeft + arr[i][i]
+    } 
+    sum1 = sum1 + diagUpLeft
+    sum2 = sum2 + diagUpRight
+    
+    let absDiff = sum1 - sum2
+    if (absDiff < 0) {
+        absDiff = absDiff * -1
+    }
+    
+    return absDiff
+}

@@ -22,3 +22,7 @@ int[2]: Alice's score is in the first position, and Bob's score is in the second
 ## Challenge 4: aVeryBigSum
 
 Return the sum of all array elements
+
+## Challenge 5: diagonalDifference
+
+Given a square matrix, calculate the absolute difference between the sum of its diagonals.
