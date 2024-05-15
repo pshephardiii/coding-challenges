@@ -15,3 +15,17 @@ function simpleArraySum(ar) {
     }
     return sum
 }
+
+// Challenge 3
+
+function compareTriplets(a, b) {
+    let finalArr = [0, 0]
+    for (let i = 0; i < 3; i++) {
+        if (a[i] > b[i]) {
+            finalArr[0]++
+        } else if (b[i] > a[i]) {
+            finalArr[1]++
+        } else {continue}
+    }
+    return finalArr
+}
