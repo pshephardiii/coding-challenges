@@ -98,3 +98,21 @@ function plusMinus(arr) {
     console.log(ratioNegPrec)
     console.log(ratioZeroPrec)
 }
+
+// Challenge 7
+
+function staircase(n) {
+    let stairs = ''
+    for (let i = 1; i < n + 1; i++) {
+        if (i === (n)) {
+            stairs = stairs.concat(''.padStart(n, "#"))
+        } else {
+            let add = ''
+            let space = add.padStart(n - i, ' ')
+            let pad = space.padEnd(n, '#')
+            let newLine = pad.padEnd(n + 1, '\n')
+            stairs = stairs.concat(newLine)
+        }
+    }
+    console.log(stairs)
+}

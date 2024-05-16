@@ -30,3 +30,8 @@ Given a square matrix, calculate the absolute difference between the sum of its 
 ## Challenge 6: plusMinus
 
 Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero.  Print decimal value of each fraction on a new line with 6 places after decimal.
+
+## Challenge 7: staircase
+
+Write a program that prints a staircase of size n.
+- Its base and height are both equal to n.  It is drawn using # symbols and spaces.  The last line is not preceded by space.
