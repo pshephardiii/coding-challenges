@@ -69,3 +69,32 @@ function diagonalDifference(arr) {
     
     return absDiff
 }
+
+// Challenge 6
+
+function plusMinus(arr) {
+    let ratioPos = 0
+    let ratioNeg = 0
+    let ratioZero = 0
+    let numPos = 0
+    let numNeg = 0
+    let numZero = 0
+    
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 0){
+            numPos++
+        } else if (arr[i] < 0){
+            numNeg++
+        } else {numZero++}
+    }
+    
+    ratioPos = numPos/arr.length
+    ratioNeg = numNeg/arr.length
+    ratioZero = numZero/arr.length
+    let ratioPosPrec = ratioPos.toPrecision(6)
+    let ratioNegPrec = ratioNeg.toPrecision(6)
+    let ratioZeroPrec = ratioZero.toPrecision(6)
+    console.log(ratioPosPrec)
+    console.log(ratioNegPrec)
+    console.log(ratioZeroPrec)
+}

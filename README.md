@@ -26,3 +26,7 @@ Return the sum of all array elements
 ## Challenge 5: diagonalDifference
 
 Given a square matrix, calculate the absolute difference between the sum of its diagonals.
+
+## Challenge 6: plusMinus
+
+Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero.  Print decimal value of each fraction on a new line with 6 places after decimal.
