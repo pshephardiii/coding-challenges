@@ -116,3 +116,23 @@ function staircase(n) {
     }
     console.log(stairs)
 }
+
+// Challenge 8: miniMaxSum
+
+function miniMaxSum(arr) {
+    let sumArr = []
+    let n = arr.length
+    
+    for (let i = 0; i < arr.length; i++) {
+        let overArr = arr.slice(i + 1, arr.length)
+        let underArr = arr.slice(0, i)
+        let newArr = overArr.concat(underArr)
+        let sum = newArr[0] + newArr[1] + newArr[2] + newArr[3]
+        sumArr.push(sum)
+    }
+    
+    let maxSum = Math.max(...sumArr)
+    let minSum = Math.min(...sumArr)
+    let final = minSum + " " + maxSum
+    console.log(final)
+}

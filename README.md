@@ -35,3 +35,7 @@ Given an array of integers, calculate the ratios of its elements that are positi
 
 Write a program that prints a staircase of size n.
 - Its base and height are both equal to n.  It is drawn using # symbols and spaces.  The last line is not preceded by space.
+
+## Challenge 8: miniMaxSum
+
+Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers.  Then, print the respective min and max values as a single line of two space-separated long integers.
