@@ -136,3 +136,11 @@ function miniMaxSum(arr) {
     let final = minSum + " " + maxSum
     console.log(final)
 }
+
+// Challenge 9
+
+function birthdayCakeCandles(candles) {
+    let maxHeight = Math.max(...candles)
+    let num = candles.filter((candle) => candle === maxHeight)
+    return num.length
+}
