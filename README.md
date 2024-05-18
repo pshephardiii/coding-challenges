@@ -43,3 +43,7 @@ Given five positive integers, find the minimum and maximum values that can be ca
 ## Challenge 9: birthdayCakeCandles
 
 Given an array of "candle sizes," count how many are the tallest height. 
+
+## Challenge 10: timeConversion
+
+Given a string s in a 12-hour AM/PM format, convert it to military time.

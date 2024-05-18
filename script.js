@@ -144,3 +144,33 @@ function birthdayCakeCandles(candles) {
     let num = candles.filter((candle) => candle === maxHeight)
     return num.length
 }
+
+// Challenge 10
+
+function timeConversion(s) {
+    let arrReview = []
+    let arr = s.split('')
+    if (s.includes('P')) {
+        if (arr[0] != '1' || arr[1] != '2') {
+            let strArr = [arr[0], arr[1]]
+            let str = strArr.join('')
+            let num = parseInt(str)
+            let newNum = num + 12
+            let newStr = newNum.toString()
+            let newStrArr = newStr.split('')
+            let arrRest = arr.slice(2)
+            arrReview = newStrArr.concat(arrRest)
+        } else {arrReview = arr}
+    } else if (s.includes ('A')) {
+        if (arr[0] == '1' && arr[1] == '2') {
+            let str = '00'
+            let newStrArr = str.split('')
+            let arrRest = arr.slice(2)
+            arrReview = newStrArr.concat(arrRest)
+        } else {arrReview = arr}
+    }
+    arrReview.pop()
+    arrReview.pop()
+    let newS = arrReview.join('')
+    return newS
+}
