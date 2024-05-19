@@ -174,3 +174,19 @@ function timeConversion(s) {
     let newS = arrReview.join('')
     return newS
 }
+
+// Challenge 11
+
+function gradingStudents(grades) {
+  
+    for (let i = 0; i < grades.length; i++) {
+        if ((grades[i] % 5 > 2) && (grades[i] > 37)) {
+            if (grades[i] % 5 === 3) {
+                grades[i] = grades[i] + 2
+            } else if (grades[i] % 5 === 4) {
+                grades[i]++
+            }
+        }
+    }
+    return grades
+}

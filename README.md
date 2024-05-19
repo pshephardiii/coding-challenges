@@ -47,3 +47,11 @@ Given an array of "candle sizes," count how many are the tallest height.
 ## Challenge 10: timeConversion
 
 Given a string s in a 12-hour AM/PM format, convert it to military time.
+
+## Challenge 11: gradingStudents
+
+Given the initial value of grade for each of Sam's n students, write code to automate the rounding process.
+- If the difference between the grade and the next multiple of 5 is less than 3, round grade up to the next multiple of 5
+- If the value of grade is less than 38, no rounding occurs as the result will still be a failing grade
+
+
