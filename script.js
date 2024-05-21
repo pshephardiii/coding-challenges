@@ -190,3 +190,25 @@ function gradingStudents(grades) {
     }
     return grades
 }
+
+// Challenge 12
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+    
+    let appleSum = 0
+    let orangeSum = 0
+    let maxArr = Math.max(apples.length, oranges.length)
+   
+    for (let i = 0; i < maxArr; i++) {
+        let appleLanding = a + apples[i]
+        let orangeLanding = b + oranges[i]
+        if (appleLanding >= s && appleLanding <= t) {
+            appleSum++
+        }
+        if (orangeLanding >= s && orangeLanding <= t) {
+            orangeSum++
+        }
+    }
+    console.log(appleSum)
+    console.log(orangeSum)
+}

@@ -54,4 +54,9 @@ Given the initial value of grade for each of Sam's n students, write code to aut
 - If the difference between the grade and the next multiple of 5 is less than 3, round grade up to the next multiple of 5
 - If the value of grade is less than 38, no rounding occurs as the result will still be a failing grade
 
-
+## Challenge 12: countApplesAndOranges
+Determine the number of apples and oranges that land on Sam's house
+- The red region denotes the house, where s is the start point, and t is the endpoint.  The apple tree is to the left of the house, the orange tree is to its right.
+- Assume the trees are located on a single point, where the apples tree is at point a, and the organge tree is at point b.
+- When a fruit falls, it lands d units of distance from its tree of origin along the x-axis.  A negative value of d means the fruit fell d units to the tree's left, and positive d means it falls d units to the right.
+- output should be number of apples in range on one line, then number of oranges in range on next line
