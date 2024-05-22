@@ -212,3 +212,37 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
     console.log(appleSum)
     console.log(orangeSum)
 }
+
+// Challenge 13
+
+function kangaroo(x1, v1, x2, v2) {
+    let sum1 = x1
+    let sum2 = x2
+    let max = 0
+    
+    if (x1 > x2) {
+        max += x1
+    } else if (x2 > x1) {
+        max += x2
+    } else { return 'YES' }
+    
+    if (x1 > x2 && v1 >= v2) {
+        return 'NO'
+    } else if (x2 > x1 && v2 >= v1) {
+        return 'NO'
+    }
+    
+    while (max >= sum1 && max >= sum2) {
+        if (max == sum1) {
+            max += v1
+        } else if (max == sum2) {
+            max += v2
+        }
+        sum1 += v1
+        sum2 += v2
+        if (sum1 == sum2) {
+            return 'YES'
+        } 
+    }
+    return 'NO'
+}

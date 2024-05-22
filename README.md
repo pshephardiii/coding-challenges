@@ -60,3 +60,8 @@ Determine the number of apples and oranges that land on Sam's house
 - Assume the trees are located on a single point, where the apples tree is at point a, and the organge tree is at point b.
 - When a fruit falls, it lands d units of distance from its tree of origin along the x-axis.  A negative value of d means the fruit fell d units to the tree's left, and positive d means it falls d units to the right.
 - output should be number of apples in range on one line, then number of oranges in range on next line
+
+## Challenge 13: kangaroo
+You have to figure out a way to get both kangaroos at the same location at the same time as part of the show.  If it is possible, return YES, otherwise return NO.
+- First kangaroo starts at x1 and moves at rate of v1 meter per jump.  Mirror for second kangaroo.
+
