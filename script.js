@@ -246,3 +246,47 @@ function kangaroo(x1, v1, x2, v2) {
     }
     return 'NO'
 }
+
+// Challenge 13 - I'm sure there's a more elegant way to do this one!
+
+function getTotalX(a, b) {
+    
+    let bMin = Math.min(...b)
+    let aMax = Math.max(...a)
+
+    let intArr = []
+    let firstReqArr = []
+    let bothReqArr = []
+
+    for (let i = aMax; i <= bMin; i++) {
+        intArr.push(i)
+    }
+
+    for (let i = 0; i < intArr.length; i++) {
+  
+        for (let j = 0; j < a.length; j++) {
+            if (intArr[i] % a[j] === 0) {
+                if (j + 1 === a.length) {
+                    firstReqArr.push(intArr[i])
+                } else if (j + 1 !== a.length) {
+                    continue
+                }
+            } else {break}
+        }
+    }
+
+    for (let i = 0; i < firstReqArr.length; i++) {
+  
+        for (let j = 0; j < b.length; j++) {
+            if (b[j] % firstReqArr[i] === 0) {
+                if (j + 1 === b.length) {
+                    bothReqArr.push(firstReqArr[i])
+                } else if (j + 1 !== b.length) {
+                    continue
+                }
+            } else {break}
+        }
+    }
+
+    return(bothReqArr.length)
+}

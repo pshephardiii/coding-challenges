@@ -65,3 +65,9 @@ Determine the number of apples and oranges that land on Sam's house
 You have to figure out a way to get both kangaroos at the same location at the same time as part of the show.  If it is possible, return YES, otherwise return NO.
 - First kangaroo starts at x1 and moves at rate of v1 meter per jump.  Mirror for second kangaroo.
 
+## Challenge 14: getTotalX
+Given two arrays of integers. Determine all integers that satisfy the following two conditions:
+1. The elements of the first array are all factors of the integer being considered
+2. The integer being considered is a factor of all elements of the second array
+- Constraint: only up to ten numbers in arrays, elements in arrays must be between 1 and 100
+
