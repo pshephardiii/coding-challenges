@@ -247,7 +247,7 @@ function kangaroo(x1, v1, x2, v2) {
     return 'NO'
 }
 
-// Challenge 13 - I'm sure there's a more elegant way to do this one!
+// Challenge 14 - I'm sure there's a more elegant way to do this one!
 
 function getTotalX(a, b) {
     
@@ -289,4 +289,27 @@ function getTotalX(a, b) {
     }
 
     return(bothReqArr.length)
+}
+
+// Challenge 15
+
+function breakingRecords(scores) {
+    let max = scores[0]
+    let min = scores[0]
+    
+    let countMax = 0
+    let countMin = 0
+    
+    for (let i = 1; i < scores.length; i++) {
+        if (scores[i] > max) {
+            countMax++
+            max = scores[i]
+        } else if (scores[i] < min) {
+            countMin++
+            min = scores[i]
+        }
+    }
+    
+    let returnArr = [countMax, countMin]
+    return returnArr
 }

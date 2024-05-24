@@ -71,3 +71,6 @@ Given two arrays of integers. Determine all integers that satisfy the following 
 2. The integer being considered is a factor of all elements of the second array
 - Constraint: only up to ten numbers in arrays, elements in arrays must be between 1 and 100
 
+## Challenge 15: breakingRecords
+Given an array of scores, count how many times she sets a new high record and how many times she sets a new low record (returned as an array).
+- You don't count the first score!
