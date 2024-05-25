@@ -313,3 +313,35 @@ function breakingRecords(scores) {
     let returnArr = [countMax, countMin]
     return returnArr
 }
+
+// Challenge 16
+
+function birthday(s, d, m) {
+    
+    let count = 0
+    
+    function sumArr(arr) {
+        let sum = 0
+        for (let i = 0; i < arr.length; i++) {
+            sum = sum + arr[i]
+        }
+        return sum
+    }
+    
+    for (let i = 0; i < s.length; i++) {
+        if (m > s.length) {
+            break
+        }
+        let subArr = s.slice(i, m)
+        let total = sumArr(subArr)
+        if (total === d) {
+            count++
+            m++
+        } else { 
+            m++
+            continue 
+        }
+    }
+
+    return count
+}
