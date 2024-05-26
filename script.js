@@ -317,7 +317,7 @@ function breakingRecords(scores) {
 // Challenge 16
 
 function birthday(s, d, m) {
-    
+
     let count = 0
     
     function sumArr(arr) {
@@ -343,5 +343,24 @@ function birthday(s, d, m) {
         }
     }
 
+    return count
+}
+
+// Challenge 17
+
+function divisibleSumPairs(n, k, ar) {
+    
+    let count = 0
+    
+    for (let i = 0; i < ar.length; i++) {
+        
+        for (let j = i + 1; j < ar.length; j++) {
+            let sum = ar[i] + ar[j]
+            if (sum % k === 0) {
+                count++
+            }
+        }
+    }
+    
     return count
 }
