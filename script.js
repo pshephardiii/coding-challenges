@@ -364,3 +364,29 @@ function divisibleSumPairs(n, k, ar) {
     
     return count
 }
+
+// Challenge 18 - needed some help to get the runtime down
+
+function climbingLeaderboard(ranked, player) {
+  
+    let rankingArr = []
+    let uniqueRanks = [ranked[0]]
+    
+    for (let i = 1; i< ranked.length; i++) {
+        if (ranked[i] !== uniqueRanks[uniqueRanks.length-1]) {
+            uniqueRanks.push(ranked[i])
+        }
+    }
+    
+    let index = uniqueRanks.length - 1
+    
+    for (let i = 0; i < player.length; i++) {
+
+        while (player[i] >= uniqueRanks[index]) {
+            index--
+        }
+        let rank = index + 2
+        rankingArr.push(rank)
+    }
+    return rankingArr
+}

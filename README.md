@@ -84,3 +84,6 @@ Determine how many ways she can divide the chocolate.
 
 ## Challenge 17: divisibleSumPairs
 Given an array of integers and a positive integer k, determine the number of (i, j) pairs where i < j and ar[i] + ar[j] is divisible by k.
+
+## Challenge 18: climbingLeaderboard
+Given a descending array of ranked scores and an ascending array of player scores, return an array that gives the ranking of the player score relative to the ranked scores.
