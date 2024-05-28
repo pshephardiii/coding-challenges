@@ -87,3 +87,12 @@ Given an array of integers and a positive integer k, determine the number of (i,
 
 ## Challenge 18: climbingLeaderboard
 Given a descending array of ranked scores and an ascending array of player scores, return an array that gives the ranking of the player score relative to the ranked scores.
+
+## Challenge 19: dayOfProgrammer
+Given a year y, find the date of the 256th day of the year according to Russian calendar.  Then print in format dd.mm.yy
+- Year range: 1700 - 2700
+- From 1700 to 1917, used Julian calendar
+- Since 1919, used Gregorian calendar
+- 1918: when the next day after January 31st is Feb 14th
+- In Julian, leap years are divisible by 4
+In Gregorian, leap years are either divisible by 400 or divisible by 4 and not divisible by 100
