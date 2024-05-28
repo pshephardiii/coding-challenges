@@ -96,3 +96,8 @@ Given a year y, find the date of the 256th day of the year according to Russian 
 - 1918: when the next day after January 31st is Feb 14th
 - In Julian, leap years are divisible by 4
 In Gregorian, leap years are either divisible by 400 or divisible by 4 and not divisible by 100
+
+## Challenge 20: bonAppetit
+Given an array of items and their prices and one indexed item that Anna doesn't eat, calculate whether the bill was fairly split.
+- If so, print 'Bon Appetit'
+- If not, calculate how much Anna is owed

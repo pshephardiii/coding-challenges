@@ -415,3 +415,33 @@ function dayOfProgrammer(year) {
         }
     }
 }
+
+// Challenge 20
+
+function bonAppetit(bill, k, b) {
+    
+    function fullSum(arr) {
+        let sum = 0
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i]
+        }
+        return sum
+    }
+    
+    function difference (n1, n2) {
+        let diff = n1 - n2
+        if (diff < 0) {
+            diff = diff * -1
+        }
+        return diff
+    }
+    
+    let billSum = fullSum(bill)
+    let fairInt = (billSum - bill[k]) / 2
+    
+    if (fairInt < b) {
+        console.log(difference(fairInt, b))
+    } else {
+        console.log('Bon Appetit')
+    }
+}
