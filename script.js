@@ -445,3 +445,23 @@ function bonAppetit(bill, k, b) {
         console.log('Bon Appetit')
     }
 }
+
+// Challenge 21
+
+function sockMerchant(n, ar) {
+    
+    let counter = {}
+    let pairs = 0
+    
+    for (let i = 0; i < ar.length; i++) {
+        let num = ar[i]
+        counter[num] = (counter[num] || 0) + 1
+    }
+    
+    for (let key in counter) {
+        let div = counter[key] / 2
+        pairs += Math.floor(div)
+    }
+    
+    return pairs
+}

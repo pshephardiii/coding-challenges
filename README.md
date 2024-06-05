@@ -101,3 +101,6 @@ In Gregorian, leap years are either divisible by 400 or divisible by 4 and not d
 Given an array of items and their prices and one indexed item that Anna doesn't eat, calculate whether the bill was fairly split.
 - If so, print 'Bon Appetit'
 - If not, calculate how much Anna is owed
+
+## Challenge 21: sockMerchant
+Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are
