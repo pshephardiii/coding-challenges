@@ -465,3 +465,33 @@ function sockMerchant(n, ar) {
     
     return pairs
 }
+
+// Challenge 22
+
+function migratoryBirds(arr) {
+    
+    let counter = {}
+    let max = 0
+    let maxKey = 0
+    
+    for (let int of arr) {
+        counter[int] = (counter[int] || 0) + 1
+    }
+    
+    for (let key in counter) {
+
+        if (counter[key] > max) {
+            max = counter[key]
+            maxKey = key
+        }
+        
+        if (counter[key] === max) {
+            if (key < maxKey) {
+                maxKey = key
+            }
+        }
+    }
+    
+    return maxKey
+}
+

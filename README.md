@@ -104,3 +104,8 @@ Given an array of items and their prices and one indexed item that Anna doesn't 
 
 ## Challenge 21: sockMerchant
 Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are
+
+## Challenge 22: migratoryBirds
+Given an array of integers, determine the most frequently used int.
+- If more than 1 type is max, return smallest
+
