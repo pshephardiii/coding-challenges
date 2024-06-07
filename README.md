@@ -109,3 +109,7 @@ Given an array of integers representing the color of each sock, determine how ma
 Given an array of integers, determine the most frequently used int.
 - If more than 1 type is max, return smallest
 
+## Challenge 23: pageCount
+Given a number of total pages and the number of a target page, what's the minimum number of page flips it would take to get to the target page?
+- Can only start from front or back of book
+- First page is on right side (left side would be page 0)

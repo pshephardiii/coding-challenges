@@ -484,7 +484,7 @@ function migratoryBirds(arr) {
             max = counter[key]
             maxKey = key
         }
-        
+
         if (counter[key] === max) {
             if (key < maxKey) {
                 maxKey = key
@@ -493,5 +493,43 @@ function migratoryBirds(arr) {
     }
     
     return maxKey
+}
+
+// Challenge 23
+
+function pageCount(n, p) {
+    
+    let frontFlip = 0
+    let backFlip = 0
+    
+    for (let i = 0; i <= n; i = i + 2) {
+        if (i === p || i + 1 === p) {
+            break
+        } else {
+            frontFlip++
+        }
+    }
+    
+    for (let i = n; i >= 0; i = i - 2) {
+
+        if (n % 2 === 0) {
+            if (i === p || i + 1 === p) {
+                break
+            } else {
+                backFlip++
+            }
+
+        } else {
+            if (i === p || i - 1 === p) {
+                break
+            }
+            else {
+                backFlip++
+            }
+        }
+    }
+    
+    let minFlip = Math.min(frontFlip, backFlip)
+    return minFlip
 }
 
