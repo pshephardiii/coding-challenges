@@ -113,3 +113,6 @@ Given an array of integers, determine the most frequently used int.
 Given a number of total pages and the number of a target page, what's the minimum number of page flips it would take to get to the target page?
 - Can only start from front or back of book
 - First page is on right side (left side would be page 0)
+
+## Challenge 24: squares
+Return the number of square integers within a given range

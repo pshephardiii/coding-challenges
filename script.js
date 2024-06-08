@@ -533,3 +533,19 @@ function pageCount(n, p) {
     return minFlip
 }
 
+// Challenge 24
+
+function squares(a, b) {
+    
+    let sum = 0
+    let sqrtA = Math.sqrt(a)
+    let sqrtB = Math.sqrt(b)
+    let lowerBound = Math.ceil(sqrtA)
+    let upperBound = Math.floor(sqrtB)
+    
+    for (let i = lowerBound; i <= upperBound; i++) {
+        sum++
+    }
+    
+    return sum
+}
