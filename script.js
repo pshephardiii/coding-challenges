@@ -549,3 +549,53 @@ function squares(a, b) {
     
     return sum
 }
+
+// Challenge 25
+
+const fs = require('fs')
+
+function decode(message_file) {
+
+    // Set empty variable for final message
+    let message = ''
+
+    // Set a variable for the stringified text file
+    let string = fs.readFileSync(message_file).toString()
+
+    // Turn string into an array of values containing the numbers and words
+    let arr = string.split('\n')
+
+    // Remove any elements from array that are empty due to, say, line spacing of text file
+    let arrNoSpaces = arr.filter((element) => element)
+  
+    // Set empty arrays for numbers and words in text file
+    let numArr = []
+    let wordArr = []
+
+    // Loop over arrNoSpaces, set a variable for an array that will contain the number and associated word as separate elements, push the first element into the numArr (as an integer) and push the second element into wordArr
+    for (let i = 0; i < arrNoSpaces.length; i++) {
+        let subArr = arrNoSpaces[i].split(' ')
+        numArr.push(parseInt(subArr[0]))
+        wordArr.push(subArr[1])
+    }
+
+    // Sort the numArr in ascending order for the pyramid
+    let numArrSorted = [...numArr].sort(function(a, b){return a-b})
+
+    // Set a variable that will increase on each iteration of the loop below
+    let count = 1
+        
+    // Set a variable for an array that will contain the words of the message in order
+    let finalWordArr = []
+
+    // Iterate over numArrSorted, finding the index of the numbers that would be on the far right of each step of the pyramid within the original numArr, as those indexes will coincide with the indexes of the associated words in wordArr. Push the relevant words into finalWordArr
+    for (let i = 0; i < numArrSorted.length; i += count) {
+        index = numArr.indexOf(numArrSorted[i])
+        finalWordArr.push(wordArr[index])
+        count++
+    }
+
+    // Set the message to the joined finalWordArr, which will be a string of the decoded message.  And return it!
+    message = finalWordArr.join(' ')
+    return message
+}

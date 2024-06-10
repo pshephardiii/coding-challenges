@@ -116,3 +116,6 @@ Given a number of total pages and the number of a target page, what's the minimu
 
 ## Challenge 24: squares
 Return the number of square integers within a given range
+
+## Challenge 25: decode
+Confidential
