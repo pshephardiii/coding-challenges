@@ -599,3 +599,39 @@ function decode(message_file) {
     message = finalWordArr.join(' ')
     return message
 }
+
+// Challenge 26
+
+function pickingNumbers(a) {
+    
+    let max = 0
+    let nextNum = -2
+    
+    function formSub(num, arr) {
+
+        let subArr = []
+
+        for (let i = 0; i < arr.length; i++) {
+            
+            if (nextNum === -2) {
+                if (arr[i] === num + 1 || arr[i] === num - 1) {
+                    nextNum = arr[i]
+                }
+            }
+            
+            if (num === arr[i] || arr[i] === nextNum) {
+                subArr.push(arr[i])
+            }
+        }
+        nextNum = -2
+        return subArr
+    }
+    
+    for (let i = 0; i < a.length; i++) {
+
+        if (formSub(a[i], a).length > max) {
+            max = formSub(a[i], a).length
+        }
+    }
+    return max
+}

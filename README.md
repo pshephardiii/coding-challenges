@@ -119,3 +119,6 @@ Return the number of square integers within a given range
 
 ## Challenge 25: decode
 Confidential
+
+## Challenge 26: pickingNumbers
+Given an array of integers, find the longest subarray where the absolute difference between any two elements is less than or equal to 1.
