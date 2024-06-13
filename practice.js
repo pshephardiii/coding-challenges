@@ -37,11 +37,32 @@
 //     return product
 // }
 
-function recursiveRange(n) {
-    if (n === 1) {
-        return n
+// function recursiveRange(n) {
+//     if (n === 1) {
+//         return n
+//     }
+//     return n + recursiveRange(n - 1) 
+// }
+
+function fib(n){
+    if (n === 1 || n === 2) {
+        return 1
     }
-    return n + recursiveRange(n - 1) 
-}
-
-
+    let m = 2
+    let num1 = 1
+    let num2 = 1
+    let sum = 0
+    
+    function add(n1, n2) {
+      m++
+      sum = n1 + n2
+      n1 = n2
+      n2 = sum
+      if (m !== n) {
+          return add(n1, n2)
+      }
+      return sum
+    }
+    add(num1, num2)
+    return sum
+  }
