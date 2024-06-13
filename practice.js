@@ -15,27 +15,33 @@
 //     return n
 // }
 
-function productOfArray(arr) {
+// function productOfArray(arr) {
 
-    if (arr.length === 0) {
-        return 'empty array'
+//     if (arr.length === 0) {
+//         return 'empty array'
+//     }
+
+//     let product = arr[arr.length - 1]
+
+//     function multiplyArr(array) {
+
+//         if (array.length > 1) {
+//             array.pop()
+//             product = product * array[array.length - 1]
+//             return multiplyArr(array)
+//         }
+//         return product * array[0]
+//     }
+
+//     multiplyArr(arr)
+//     return product
+// }
+
+function recursiveRange(n) {
+    if (n === 1) {
+        return n
     }
-    
-    let product = arr[arr.length - 1]
-
-    function multiplyArr(array) {
-
-        if (array.length > 1) {
-            array.pop()
-            product = product * array[array.length - 1]
-            return multiplyArr(array)
-        }
-        return product * array[0]
-    }
-
-    multiplyArr(arr)
-    return product
+    return n + recursiveRange(n - 1) 
 }
 
-console.log(productOfArray([]))
 
