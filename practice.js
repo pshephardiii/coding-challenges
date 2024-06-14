@@ -1,3 +1,5 @@
+// RECURSION PRACTICE
+
 // function power(num1, num2) {
 //    if (num2 === 0) {
 //      return 1
@@ -69,25 +71,52 @@
 //     return sum
 //   }
 
-function reverse(str) {
-    if (typeof str !== "string") {
-        return 'not a string'
+// function reverse(str) {
+//     if (typeof str !== "string") {
+//         return 'not a string'
+//     }
+
+//     let strArr = str.split('')
+//     let revArr = []
+
+//     function addReverse(arr) {
+//         if (arr.length) {
+//             revArr.push(arr.pop())
+//             return addReverse(arr)
+//         }
+//         return revArr
+//     }
+//     addReverse(strArr)
+//     let revStr = revArr.join('')
+//     return revStr
+// }
+
+// PROBLEM SOLVING PATTERNS
+
+// FREQUENCY COUNTER
+
+function same(arr1, arr2) {
+    if (arr1.length !== arr2.length) {
+        return false
+    }
+    let freqCounter1 = {}
+    let freqCounter2 = {}
+
+    for (let i = 0; i < arr1.length; i++) {
+        freqCounter1[arr1[i]] ? freqCounter1[arr1[i]]++ : 
+        freqCounter1[arr1[i]] = 1
+        
+        freqCounter2[arr2[i]] ? freqCounter2[arr2[i]]++ : 
+        freqCounter2[arr2[i]] = 1
     }
 
-    let strArr = str.split('')
-    let revArr = []
-
-    function addReverse(arr) {
-        if (arr.length) {
-            revArr.push(arr.pop())
-            return addReverse(arr)
+    for (key in freqCounter1) {
+        if (freqCounter2[key * key]) {
+            if (freqCounter1[key] === freqCounter2[key * key]) {
+                continue
+            }
         }
-        return revArr
+        return false
     }
-    addReverse(strArr)
-    let revStr = revArr.join('')
-    return revStr
+    return true
 }
-
-console.log(reverse('I am the Paul'))
-
