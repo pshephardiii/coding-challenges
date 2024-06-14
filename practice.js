@@ -1,11 +1,13 @@
 // function power(num1, num2) {
+//    if (num2 === 0) {
+//      return 1
+//    }
 //     if (num2 > 1) {
 //         return num1 * power(num1, num2 - 1)
 //     }
 //     return num1
 // }
 
-// console.log(power(8, 0))
 
 // function factorial(n) {
 //     if (n > 1) {
@@ -44,25 +46,48 @@
 //     return n + recursiveRange(n - 1) 
 // }
 
-function fib(n){
-    if (n === 1 || n === 2) {
-        return 1
-    }
-    let m = 2
-    let num1 = 1
-    let num2 = 1
-    let sum = 0
+// function fib(n){
+//     if (n === 1 || n === 2) {
+//         return 1
+//     }
+//     let m = 2
+//     let num1 = 1
+//     let num2 = 1
+//     let sum = 0
     
-    function add(n1, n2) {
-      m++
-      sum = n1 + n2
-      n1 = n2
-      n2 = sum
-      if (m !== n) {
-          return add(n1, n2)
-      }
-      return sum
+//     function add(n1, n2) {
+//       m++
+//       sum = n1 + n2
+//       n1 = n2
+//       n2 = sum
+//       if (m !== n) {
+//           return add(n1, n2)
+//       }
+//       return sum
+//     }
+//     add(num1, num2)
+//     return sum
+//   }
+
+function reverse(str) {
+    if (typeof str !== "string") {
+        return 'not a string'
     }
-    add(num1, num2)
-    return sum
-  }
+
+    let strArr = str.split('')
+    let revArr = []
+
+    function addReverse(arr) {
+        if (arr.length) {
+            revArr.push(arr.pop())
+            return addReverse(arr)
+        }
+        return revArr
+    }
+    addReverse(strArr)
+    let revStr = revArr.join('')
+    return revStr
+}
+
+console.log(reverse('I am the Paul'))
+
