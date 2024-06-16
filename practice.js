@@ -105,6 +105,20 @@
 //   return false
 // }
 
+// function someRecursive(arr, callback){
+//     let l = arr.length
+//     if (l === 0) {
+//         return false
+//     }  
+//     if (callback(arr[l - 1]) === true) {
+//         return true
+//     } else {
+//         arr.pop()
+//         return someRecursive(arr, callback)
+//     }
+// }
+
+
 // PROBLEM SOLVING PATTERNS
 
 // FREQUENCY COUNTER
