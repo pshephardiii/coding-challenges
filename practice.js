@@ -147,6 +147,33 @@
 //     return flatArr
 // }
 
+// function capitalizeFirst (arr) {
+//     let newArr = []
+//     let n = 0
+    
+//     function capitalizeAll(array) {
+        
+//         let strArr = array[n].split('')
+
+//         let capital = strArr[0].toUpperCase()
+
+//         strArr.shift()
+//         strArr.unshift(capital)
+ 
+//         let newStr = strArr.join('')
+//         newArr.push(newStr)
+//          n++
+//         if (n === array.length) {
+//             return newArr
+//         } else {
+//             return capitalizeAll(array)
+//         }
+//    }
+
+//    capitalizeAll(arr)
+//    return newArr
+//  }
+
 // PROBLEM SOLVING PATTERNS
 
 // FREQUENCY COUNTER
