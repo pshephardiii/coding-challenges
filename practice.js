@@ -119,6 +119,34 @@
 // }
 
 
+// function flatten(arr){
+    
+//     let l = arr.length
+    
+//     let flatArr = []
+    
+//     function flattenSub(subArr) {
+        
+//         for (let val of subArr) {
+//             if (val.length) {
+//                 flattenSub(val)
+//             } else {
+//                 flatArr.push(val)
+//             }
+            
+//         }
+//     }
+
+//     for (let val of arr) {
+//         if (val.length) {
+//             flattenSub(val)
+//         }
+//         else flatArr.push(val)
+//     }
+
+//     return flatArr
+// }
+
 // PROBLEM SOLVING PATTERNS
 
 // FREQUENCY COUNTER
