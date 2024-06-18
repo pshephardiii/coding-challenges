@@ -248,3 +248,23 @@
 //     return newObj
 // }
 
+// function collectStrings(obj) {
+
+//     let retArr = []
+//     if (Object.keys(obj).length === 0) {
+//         return retArr
+//     }
+    
+//     for (let key in obj) {
+        
+//         if (typeof obj[key] === 'string') {
+//             retArr.push(obj[key])
+//         }
+        
+//         else if (typeof obj[key] === 'object') {
+//             retArr = retArr.concat(collectStrings(obj[key]))
+//         }
+//     }
+//     return retArr
+// }
+
