@@ -202,3 +202,23 @@
 //     }
 //     return newArr
 //   }
+
+// function nestedEvenSum (obj) {
+//     let sum = 0
+//     let vals = Object.values(obj)
+    
+//     for (let val of vals) {
+                  
+//         if (typeof val === 'object') {
+//             sum = sum + nestedEvenSum(val)
+
+//         } else {            
+//             if (typeof val === 'number') {
+//                 if (val % 2 === 0) {
+//                     sum = sum + val
+//                 }
+//             }
+//         }
+//     }
+//     return sum
+//   }
