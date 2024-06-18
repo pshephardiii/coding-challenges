@@ -75,3 +75,27 @@
 //     }
 //     return count
 // }
+
+// SLIDING WINDOW
+
+// function maxSubarraySum(arr, n){
+//     if (n > arr.length) {
+//         return null
+//     }
+//     let finalMax = 0
+//     let tempMax = 0
+    
+//     for (let i = 0; i < n; i++) {
+//         tempMax = tempMax + arr[i]
+//     }
+  
+//     finalMax = tempMax
+  
+//     for (let i = n; i < arr.length; i++) {
+//         tempMax = (tempMax + arr[i]) - arr[i - n]
+//         finalMax = Math.max(tempMax, finalMax)
+//     }
+//     return finalMax
+//   }
+
+// DIVIDE AND CONQUER
