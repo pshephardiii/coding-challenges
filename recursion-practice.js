@@ -222,3 +222,29 @@
 //     }
 //     return sum
 //   }
+
+// function stringifyNumbers(obj) {
+
+//     let newObj = {}
+//     if (Object.keys(obj).length === 0) {
+//         return newObj
+//     }
+
+//     for (let key in obj) {
+
+//         if (typeof obj[key] === 'number') {
+//             let strNum = obj[key].toString()
+//             newObj[key] = strNum
+//         }
+
+//         else if (Array.isArray(obj[key]) || typeof obj[key] !== 'object') {
+//             newObj[key] = obj[key]
+//         }
+
+//         else {
+//             newObj[key] = stringifyNumbers(obj[key])
+//         }
+//     }
+//     return newObj
+// }
+
