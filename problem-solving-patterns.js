@@ -159,6 +159,37 @@
 //     return false
 // }
 
+// function isSubsequence(str1, str2) {
+
+//     if (str1.split('').length > str2.split('').length) {
+//         return false
+//     }
+    
+//     let left = 0
+//     let right = 0
+//     let match = 0
+  
+//     while (right < str2.split('').length) {
+        
+//         let subStr2 = str2.split('')
+//         let subStr1 = str1.split('')
+        
+//         if (subStr1[left] === subStr2[right]) {
+//             left++
+//             right++
+//             match++
+  
+//         } else {
+//             right++
+//         }
+        
+//         if (match === subStr1.length) {
+//             return true
+//         }
+//     }
+//    return false
+// }
+
 // SLIDING WINDOW
 
 // function maxSubarraySum(arr, n){
