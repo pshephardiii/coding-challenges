@@ -111,6 +111,34 @@
 //     return count
 // }
 
+// function areThereDuplicates(...args) {
+//     if (args.length === 0 || args.length === 1) {
+//         return false
+//     }
+    
+//     let start = 0
+//     let end = args.length - 1
+//     let left = 1
+//     let right = args.length - 2
+  
+//     while(start < end) {
+//         if (args[start] === args[left] || args[end] === args[right]) {
+//             return true
+//         }
+  
+//         if (start === right || end === left) {
+//             start++
+//             left = start + 1
+//             end--
+//             right = end - 1
+//         } else {
+//           left++
+//           right--
+//         }
+//     }
+//     return false
+//   }
+
 // SLIDING WINDOW
 
 // function maxSubarraySum(arr, n){
