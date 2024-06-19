@@ -17,7 +17,7 @@
 //         freqCounter2[arr2[i]] = 1
 //     }
 
-//     for (key in freqCounter1) {
+//     for (let key in freqCounter1) {
 //         if (freqCounter2[key * key]) {
 //             if (freqCounter1[key] === freqCounter2[key * key]) {
 //                 continue
@@ -53,6 +53,41 @@
 //     }
 //     return true
 //   }
+
+// function sameFrequency(int1, int2){
+//     if (Number.isInteger(int1) === false || Number.isInteger(int2) === false || 
+//     int1 < 0 || int2 < 0) {
+//         return 'please use positive integers only'
+//     }
+    
+//     let intArr1 = int1.toString().split('')
+//     let intArr2 = int2.toString().split('')
+    
+//     if (intArr1.length !== intArr2.length) {
+//         return false
+//     }
+    
+//     let counter1 = {}
+//     let counter2 = {}
+    
+//     for (let val of intArr1) {
+//         counter1[val] = (counter1[val] || 0) + 1
+//     }
+    
+//     for (let val of intArr2) {
+//         counter2[val] = (counter2[val] || 0) + 1
+//     }
+    
+//     for (let key in counter1) {
+//         if (counter2[key]) {
+//             if (counter1[key] === counter2[key]) {
+//                 continue
+//             }
+//         }
+//         return false
+//     }
+//     return true
+// }
   
 // MULTIPLE POINTERS
 
@@ -98,4 +133,5 @@
 //     return finalMax
 //   }
 
-// DIVIDE AND CONQUER
+
+
