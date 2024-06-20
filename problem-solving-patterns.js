@@ -212,5 +212,44 @@
 //     return finalMax
 //   }
 
+// function minSubArrayLen(arr, n) {
+//     if (n < 0 || Number.isInteger(n) === false) {
+//         return 'positive integer please!'
+//     }
+
+//     let sum = 0
+//     let min = 0
+//     let minIndex = 0
+    
+//     for (let i = 0; i < arr.length; i++) {
+
+//         sum = sum + arr[i]
+
+//         if (sum >= n) {
+//             minIndex = i
+//             min = i + 1
+//             break
+
+//         } else if (i === arr.length - 1) {
+//             return 0
+//         }
+//     }
+
+//     for (let i = minIndex; i < arr.length; i++) {
+        
+//         sum = sum - arr[i - minIndex]
+
+//         if (sum >= n) {
+//             min--
+//             minIndex--
+//             i--
+
+//         } else {
+//             sum = sum + arr[i + 1]
+//         }
+//     }
+//     return min
+// }
+
 
 
