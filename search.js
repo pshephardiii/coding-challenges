@@ -23,7 +23,7 @@
   
 //         if (val < arr[mid]) {
 //             mid--
-//             right = mid - 1
+//             right = mid
 
 //         }  else if (val > arr[mid]) {
 //             mid++
@@ -36,3 +36,30 @@
 //     }
 //     return -1
 // }
+
+// Naive String Search
+
+// function stringSearch(str, subStr) {
+
+//     let count = 0
+
+//     for (let i = 0; i < str.length; i++) {
+
+//         for (let j = 0; j < subStr.length; j++) {
+            
+//             if (subStr[j] !== str[i]) {
+//                 break
+//             }
+//             if (subStr[j] === str[i] && j !== subStr.length - 1) {
+//                 i++
+//             }
+//             if (subStr[j] === str[i] && j === subStr.length - 1) {
+//                 count++
+//             }
+//         }
+//     }
+//     return count
+// }
+
+
+
