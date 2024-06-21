@@ -635,3 +635,23 @@ function pickingNumbers(a) {
     }
     return max
 }
+
+// Challenge 27
+
+function countingValleys(steps, path) {
+    
+    let H = 0
+    let valleys = 0
+    
+    for(let i = 0; i < steps; i++) {
+        if (path[i] === 'U') {
+            H++
+        } else if (path[i] === 'D') {
+            H--
+            if (H === -1) {
+                valleys++
+            }
+        }
+    }
+    return valleys
+}

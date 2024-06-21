@@ -123,3 +123,6 @@ Confidential
 ## Challenge 26: pickingNumbers
 Given an array of integers, find the longest subarray where the absolute difference between any two elements is less than or equal to 1.
 
+## Challenge 27: countingValleys
+Given a number of steps and an array of letters 'U' and 'D' (uphill and downhill), calculate the number of valleys traversed.
+- Climber starts at sea level before the first 'U' or 'D'.
