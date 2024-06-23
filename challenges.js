@@ -655,3 +655,33 @@ function countingValleys(steps, path) {
     }
     return valleys
 }
+
+function getMoneySpent(keyboards, drives, b) {
+    
+    let max = 0
+    
+    for (let i = 0; i< keyboards.length; i++) {
+        // check if the max is equal to b, which is the highest max can get
+        if (max === b) {break}
+        // check if keyboard item costs more than b, as there'd be no need to loop through
+        if (keyboards[i] > b) {
+            continue
+        } 
+        for (let j = 0; j < drives.length; j++) {
+  
+            if (drives[j] > b) {
+                continue
+            // check if keyboard and drive items are more than the current max but less than or equal to b
+            } else if (drives[j] + keyboards[i] > max 
+            && drives[j] + keyboards[i] <= b)  {
+                max = drives[j] + keyboards[i]
+            }
+        // Once again, if max is equal to b, we are done here
+        if (max === b) {break}
+        }
+    }
+    // returns max unless it is impossible to buy pair with b
+    if (max > 0) {
+        return max
+    } else {return -1}
+}

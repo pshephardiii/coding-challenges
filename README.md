@@ -126,3 +126,6 @@ Given an array of integers, find the longest subarray where the absolute differe
 ## Challenge 27: countingValleys
 Given a number of steps and an array of letters 'U' and 'D' (uphill and downhill), calculate the number of valleys traversed.
 - Climber starts at sea level before the first 'U' or 'D'.
+
+## Challenge 28: getMoneySpent
+Given price lists for keyboards and USB drives and a budget, find the cost to buy the most expensive combo. If it is not possible to buy both, return -1.
