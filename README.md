@@ -129,3 +129,7 @@ Given a number of steps and an array of letters 'U' and 'D' (uphill and downhill
 
 ## Challenge 28: getMoneySpent
 Given price lists for keyboards and USB drives and a budget, find the cost to buy the most expensive combo. If it is not possible to buy both, return -1.
+
+## Challenge 29: catAndMouse
+Given the starting position of two cats and a mouse, determine which cat will get to the mouse first.
+- If cats arrive at the same time, the mouse escapes!

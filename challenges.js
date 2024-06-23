@@ -685,3 +685,26 @@ function getMoneySpent(keyboards, drives, b) {
         return max
     } else {return -1}
 }
+
+function catAndMouse(x, y, z) {
+    // Get absolute difference between x and z
+    let diffX = x - z
+    if (diffX < 0) {
+        diffX = diffX * -1
+    }
+    
+    // Get absolute difference between y and z
+    let diffY = y - z
+    if (diffY < 0) {
+        diffY = diffY * -1
+    }
+    
+    // See which absolute difference is smaller (or if they are equal)
+    if (diffX < diffY) {
+        return "Cat A"
+    } else if (diffY < diffX) {
+        return "Cat B"
+    } else {
+        return "Mouse C"
+    }
+}
