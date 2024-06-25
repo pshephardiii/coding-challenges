@@ -656,6 +656,8 @@ function countingValleys(steps, path) {
     return valleys
 }
 
+// Challenge 28
+
 function getMoneySpent(keyboards, drives, b) {
     
     let max = 0
@@ -686,6 +688,8 @@ function getMoneySpent(keyboards, drives, b) {
     } else {return -1}
 }
 
+// Challenge 29
+
 function catAndMouse(x, y, z) {
     // Get absolute difference between x and z
     let diffX = x - z
@@ -706,5 +710,23 @@ function catAndMouse(x, y, z) {
         return "Cat B"
     } else {
         return "Mouse C"
+    }
+}
+
+// Challenge 30
+
+function angryProfessor(k, a) {
+    let count = 0
+    
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] <= 0) {
+            count++
+        }
+    }
+
+    if (count >= k) {
+        return "NO"
+    } else {
+        return "YES"
     }
 }

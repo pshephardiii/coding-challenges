@@ -133,3 +133,6 @@ Given price lists for keyboards and USB drives and a budget, find the cost to bu
 ## Challenge 29: catAndMouse
 Given the starting position of two cats and a mouse, determine which cat will get to the mouse first.
 - If cats arrive at the same time, the mouse escapes!
+
+## Challenge 30: angryProfessor
+If the number of students who have an arrival time <= 0 is above the threshold (k), return "NO".  If not, return "YES".
