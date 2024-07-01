@@ -730,3 +730,26 @@ function angryProfessor(k, a) {
         return "YES"
     }
 }
+
+// Challenge 31
+
+function circularArrayRotation(a, k, queries) {
+    function oneRotation(arr){
+        let final = arr[arr.length - 1]
+        for (let i = arr.length - 2; i >= 0; i--){
+            arr[i + 1] = arr[i]
+        }
+        arr[0] = final
+        return arr
+    }
+    let count = 0
+    while (count < k){
+        oneRotation(a)
+        count++
+    }
+    let result = []
+    for (let query of queries){
+        result.push(a[query])
+    }
+    return result
+ }

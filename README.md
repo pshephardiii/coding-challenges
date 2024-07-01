@@ -136,3 +136,7 @@ Given the starting position of two cats and a mouse, determine which cat will ge
 
 ## Challenge 30: angryProfessor
 If the number of students who have an arrival time <= 0 is above the threshold (k), return "NO".  If not, return "YES".
+
+## Challenge 31: circularArrayRotation
+For every rotation, every element of array increases its index position by 1 and the final element becomes the first.
+- Given a set number of rotations, return the elements at the given indices of the rotated array.
