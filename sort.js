@@ -147,4 +147,40 @@
 //     return swapIdx
 // }
 
+// Radix Sort: only used on numbers
+
+// Number of runs depends on the number of digits in highest numbers
+
+// Helper functions:
+
+// returns the digit in num at the given place value
+function getDigit(num, place){
+    // If place = 0, position = 1, if place = 2, position = 10, etc.
+    let position = (10 ** (place))
+    // num divided by position will put the desired digit into the ones place.
+    // to isolate the digit in the one place, use remainder 10.
+    // Math.floor to get integer
+    let result = Math.floor(Math.abs((num / position) % 10))
+    return result
+}
+
+// Counts number of digits in a number
+function digitCount(num){
+    if (num === 0) {
+        return 1
+    }
+    // 10 to what power gives you num?
+    return Math.floor(Math.log10(Math.abs(num))) + 1
+}
+
+// Find the digit count of largest number
+function mostDigits(nums){
+    let max = 0
+    for (let i = 0; i < nums.length; i++) {
+        if (digitCount(nums[i]) > max) {
+            max = digitCount(nums[i])
+        }
+    }
+    return max
+}
 
