@@ -184,3 +184,19 @@ function mostDigits(nums){
     return max
 }
 
+function radixSort(nums) {
+    let maxDigits = mostDigits(nums)
+    for (let k = 0; k < maxDigits; k++) {
+        // array of ten empty subarrays
+        let buckets = Array.from({length: 10}, () => [])
+        for (let i = 0; i < nums.length; i++) {
+            let digit = getDigit(nums[i], k)
+            buckets[digit].push(nums[i])
+        }
+        nums = [].concat(...buckets)
+    }
+    return nums
+}
+
+console.log(radixSort([66, 123456, 9, 875]))
+
