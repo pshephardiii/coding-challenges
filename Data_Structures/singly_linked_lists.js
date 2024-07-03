@@ -128,7 +128,7 @@ class SinglyLinkedList{
     }
 
     set(index, value) {
-        let setNode = list.get(index)
+        let setNode = this.get(index)
         if (!setNode) {
             return false
         } else {
@@ -136,9 +136,27 @@ class SinglyLinkedList{
             return true
         }
     }
+
+    insert(index, value) {
+        if (index < 0 || index > this.length) {
+            return false
+        } else if (index === this.length) {
+            this.push(value)
+            return true
+        } else if (index === 0) {
+            this.unshift(value)
+            return true
+        } else {
+            let newNode = new Node(value)
+            let prevNode = this.get(index - 1)
+            let prevNext = prevNode.next
+            prevNode.next = newNode
+            newNode.next = prevNext
+            this.length++
+            return true
+        }
+    }
 }
-
-
 
 let list = new SinglyLinkedList()
 
@@ -146,8 +164,9 @@ list.unshift(1)
 list.unshift(2)
 list.unshift('uhohohoh')
 list.unshift(3)
-list.set(0, "it worked")
-console.log(list.set(-2, "oh boy"))
+list.insert(4, "I should be tail")
+
+console.log(list)
 
 
 
