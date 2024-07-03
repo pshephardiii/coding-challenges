@@ -85,19 +85,61 @@ class SinglyLinkedList{
         // Return saved value of removed node
         return removed
     }
+
+    // Shift (remove node from the beginning)
+    shift() {
+        if (this.length === 0) {
+            return undefined
+        }
+        let prevHead = this.head
+        this.head = prevHead.next
+        this.length--
+        if (!this.head) {
+            this.tail = null
+        }
+        return prevHead
+    }
+
+    // Unshift (add node to beginning)
+    unshift(val) {
+        let newNode = new Node(val)
+        if (!this.head) {
+            this.head = newNode
+            this.tail = newNode
+        } else {
+            newNode.next = this.head
+            this.head = newNode
+        }
+        this.length++
+        return this
+    }
+
+    get(index) {
+        if (index < 0 || index >= this.length) {
+            return undefined
+        }
+        let current = this.head
+        let count = 0
+        while(count < index) {
+            current = current.next
+            count++
+        }
+        return current
+    }
 }
 
 
 
 let list = new SinglyLinkedList()
 
-list.push(1)
-list.push(2)
-list.push(3)
+list.unshift(1)
+list.unshift(2)
+list.unshift('uhohohoh')
+list.unshift(3)
 
-list.pop()
-list.pop()
-list.pop()
-list.pop()
-console.log(list)
+
+
+
+
+
 
