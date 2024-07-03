@@ -58,11 +58,46 @@ class SinglyLinkedList{
         return this
     }
 
-    // pop method
+    // default pop method
     pop(){
-        
+        if (this.length === 0) {
+            return undefined
+        } 
+        let current = this.head
+        // This loop should end with current as the second to last node
+        for (let i = 1; i < this.length - 1; i++) {
+            current = current.next
+        }
+        // Same the tail value before setting it to null
+        let removed = current.next
+        // Set tail value to null
+        current.next = null
+        // Set second to last node as new tail
+        this.tail = current
+        // Reduce length of list
+        this.length--
+        if (this.length === 0) {
+            let val = this.head
+            this.head = null
+            this.tail = null
+            return val
+        }
+        // Return saved value of removed node
+        return removed
     }
 }
 
+
+
 let list = new SinglyLinkedList()
+
+list.push(1)
+list.push(2)
+list.push(3)
+
+list.pop()
+list.pop()
+list.pop()
+list.pop()
+console.log(list)
 
