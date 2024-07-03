@@ -126,6 +126,16 @@ class SinglyLinkedList{
         }
         return current
     }
+
+    set(index, value) {
+        let setNode = list.get(index)
+        if (!setNode) {
+            return false
+        } else {
+            setNode.val = value
+            return true
+        }
+    }
 }
 
 
@@ -136,8 +146,8 @@ list.unshift(1)
 list.unshift(2)
 list.unshift('uhohohoh')
 list.unshift(3)
-
-
+list.set(0, "it worked")
+console.log(list.set(-2, "oh boy"))
 
 
 
