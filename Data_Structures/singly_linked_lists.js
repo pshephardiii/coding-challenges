@@ -2,6 +2,7 @@
 // Linked list consists of nodes, and each node has a value and a pointer to another node or null
 // contains a head, tail, and length property
 
+
 // My thought: contains value, but also references next node
 
 // Diagram:
@@ -156,6 +157,46 @@ class SinglyLinkedList{
             return true
         }
     }
+
+    remove(index) {
+        if (index < 0 || index >= this.length) {
+            return undefined
+        } else if (index === this.length - 1) {
+            return this.pop()
+        } else if (index === 0) {
+            return this.shift()
+        } else {
+            let prevNode = this.get(index - 1)
+            let removedNode = prevNode.next
+            prevNode.next = removedNode.next
+            this.length--
+            return removedNode
+        }
+    }
+
+    reverse() {
+        // current starts out as head
+        let current = this.head
+        this.head = this.tail
+        this.tail = current
+        // This will stand in for the node that was "ahead" of the current in the original list
+        let next = null
+        // this will stand in for the node that was "behind" the current in the original list
+        let prev = null
+        let count = 0
+        while (count < this.length) {
+            // sets the next node as the current's next
+            next = current.next
+            // switches the current's next to the node "behind it"... here's where the reversal happens
+            current.next = prev
+            // makes the node that was previously behind it the current node... we are moving from the previous head to the previous tail swapping the "nexts" as we go
+            prev = current
+            // makes the current node what was previously its next node
+            current = next
+            count++
+        }
+        return this
+    }
 }
 
 let list = new SinglyLinkedList()
@@ -164,9 +205,18 @@ list.unshift(1)
 list.unshift(2)
 list.unshift('uhohohoh')
 list.unshift(3)
-list.insert(4, "I should be tail")
+list.reverse()
 
 console.log(list)
+
+// BIG O for the common methods for singly linked lists:
+// Insertion - O(1)
+// Removal - O(1) if removing from ends, or O(N) if from another place
+// Searching - O(N)... iterate entire list from the head on
+// Access O(N)... iterate entire list from the head on
+
+// These excel with insertion and deletion, especially from the beginning
+// This is the big advantage over arrays
 
 
 
