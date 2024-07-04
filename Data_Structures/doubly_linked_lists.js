@@ -134,6 +134,50 @@ class DoublyLinkedList{
             return true
         }
     }
+
+    remove(index){
+        if (index >= this.length || index < 0) {
+            return undefined
+        } else if (index === this.length - 1) {
+            return(this.pop())
+        } else if (index === 0) {
+            return(this.shift())
+        } else {
+            let removedNode = this.get(index)
+            let prevNode = this.get(index - 1)
+            let nextNode = this.get(index + 1)
+            removedNode.next = null
+            removedNode.prev = null
+            prevNode.next = nextNode
+            nextNode.prev = prevNode
+            this.length--
+            return removedNode        
+        }
+    }
+
+    reverse(){
+        let current = this.head
+        this.head = this.tail
+        this.tail = current
+        let next = null
+        let prev = null
+        let count = 0
+        
+        while (count < this.length) {
+            // make next the node after current
+            next = current.next
+            // flip the current's next to the previous node
+            current.next = prev
+            // flip the current's previous to the next node
+            current.prev = next
+            // make the formerly previous node the current (move prev up one)
+            prev = current
+            // make the current the formerly next node (move current up one)
+            current = next
+            count++
+        }
+        return this
+    }
 }
 
 let list = new DoublyLinkedList()
@@ -141,6 +185,14 @@ let list = new DoublyLinkedList()
 list.push(7)
 list.push(8)
 list.push(9)
+list.push(10)
+list.push(11)
+
+list.reverse()
+
+console.log(list.tail.prev)
+
+
 
 
 
