@@ -114,5 +114,49 @@ q.pop()
 
 // Linked List Based Queue:
 
+class Node2 {
+    constructor(val) {
+        this.val = val
+        this.next = null
+    }
+}
 
+class Queue {
+    constructor() {
+        this.first = null
+        this.last = null
+        this.size = 0
+    }
+
+    enqueue(val) {
+        let newNode = new Node2(val)
+        if (!this.first) {
+            this.first = newNode
+            this.last = newNode
+        } else{
+            this.last.next = newNode
+            this.last = newNode
+        }
+        return ++this.size
+    }
+
+    dequeue() {
+        if (!this.first) {
+            return null
+        } 
+        let prevFirst = this.first
+        if (this.first === this.last) {
+            this.last = null
+        }
+        this.first = this.first.next
+        this.size--
+        return prevFirst.val
+    }
+}
+
+let q3 = new Queue()
+
+q3.enqueue("first in line")
+q3.enqueue("second in line")
+console.log(q3.dequeue())
 
