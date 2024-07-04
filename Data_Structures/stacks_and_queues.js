@@ -82,8 +82,37 @@ class Stack{
     }
 }
 
+// Queues
 
+// FIFO data structure: first in first out
 
+// use cases: background tasks, uploading or downloading resources, printing/task processing
+
+// Creating a queue with an array
+
+let q = []
+
+q.push("First")
+q.push("Second")
+q.push("Third")
+
+q.shift()
+
+// push and shift in tandem create a queue 
+
+let q2 = []
+
+q.unshift("First")
+q.unshift("Second")
+q.unshift("Third")
+
+q.pop()
+
+// same with unshift and pop
+
+// Both require complete reindexing of the entire queue
+
+// Linked List Based Queue:
 
 
 
