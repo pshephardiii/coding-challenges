@@ -102,6 +102,16 @@ class DoublyLinkedList{
         }
         return current
     }
+
+    set(index, value){
+        let setNode = this.get(index)
+        if (!setNode) {
+            return false
+        } else{
+            setNode.val = value
+            return true
+        }
+    }
 }
 
 let list = new DoublyLinkedList()
