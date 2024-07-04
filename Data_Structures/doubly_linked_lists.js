@@ -2,6 +2,16 @@
 
 // Big tradeoff... takes up more memory
 
+// Compared to singly linked lists:
+
+// Removal is always O(1)
+// Searching is still technically O(N), but it would actually be (N/2)
+// If you need to access data in reverse, doubly linked list is way better than singly linked list
+// Also better for finding things
+// But extra pointer takes up more memory
+
+
+
 class Node{
     constructor(val){
         this.val = val
