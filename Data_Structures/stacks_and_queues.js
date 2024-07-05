@@ -88,6 +88,11 @@ class Stack{
 
 // use cases: background tasks, uploading or downloading resources, printing/task processing
 
+// Big O:
+// Insertion: O(1)
+// Removal: O(1)
+// wouldn't use for searching and access (both O(N))
+
 // Creating a queue with an array
 
 let q = []
