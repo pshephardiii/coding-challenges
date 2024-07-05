@@ -29,6 +29,58 @@
 // searching a binary tree:
 // similar to a binary search in an array
 
+// BINARY SEARCH TREE CLASS
 
+class BinarySearchTree {
+    constructor() {
+        this.root = null
+    }
+
+    insert(val) {
+        let newNode = new Node(val)
+        if (!this.root) {
+            this.root = newNode
+            return this
+        }
+        let current = this.root
+        while(true) {
+            if (newNode.val > current.val) {
+                if (newNode.val === current.val) {
+                    return undefined
+                }
+                if (!current.right) {
+                    current.right = newNode
+                    return this
+                } else {
+                    current = current.right
+                }
+            } else {
+                if (!current.left) {
+                    current.left = newNode
+                    return this
+                } else {
+                    current = current.left
+                }
+            }
+        }
+    }
+}
+
+class Node {
+    constructor(val) {
+        this.val = val
+        this.left = null
+        this.right = null
+    }
+}
+
+let tree = new BinarySearchTree()
+
+tree.insert(5)
+tree.insert(7)
+tree.insert(4)
+tree.insert(3)
+tree.insert(1200)
+console.log(tree.insert(6), tree.root.right)
 
 
