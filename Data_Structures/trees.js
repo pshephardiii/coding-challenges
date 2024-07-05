@@ -15,6 +15,19 @@
 
 // HTML DOM, network routing, abstract syntax trees (explaining syntax of programming language), AI, decision tree, folders in operating systems, JSON
 
+// BINARY TREES
+
+// binary tree: each node can have at most two children (they can have less)
+
+// BINARY SEARCH TREES
+
+// special case of binary tree
+// sorted in a particular way (data that can be compared)
+
+// EXAMPLE: from root integer, every node less than parent branches to left, every branch to the right is greater
+
+// searching a binary tree:
+// similar to a binary search in an array
 
 
 
