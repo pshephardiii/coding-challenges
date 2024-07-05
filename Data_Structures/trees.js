@@ -29,6 +29,11 @@
 // searching a binary tree:
 // similar to a binary search in an array
 
+// BIG O:
+// Insertion: O(log n)
+// Searching: O(log n)
+// Worst case... O(N) if it's a completely one sided tree (only one super long branch)
+
 // BINARY SEARCH TREE CLASS
 
 class BinarySearchTree {
@@ -64,6 +69,24 @@ class BinarySearchTree {
             }
         }
     }
+
+    find(val) {
+        if (!this.root) {
+            return false
+        }
+        let current = this.root
+        let found = false
+        while(current && !found) {
+            if (val < current.val) {
+                current = current.left
+            } else if (val > current.val) {
+                current = current.right
+            } else {
+                found = true
+            }
+        }
+        return found
+    }
 }
 
 class Node {
@@ -81,6 +104,6 @@ tree.insert(7)
 tree.insert(4)
 tree.insert(3)
 tree.insert(1200)
-console.log(tree.insert(6), tree.root.right)
+console.log(tree.find(120))
 
 
