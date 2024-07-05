@@ -106,4 +106,13 @@ tree.insert(3)
 tree.insert(1200)
 console.log(tree.find(120))
 
+// TREE TRAVERSAL (trees in general)
+
+// how do we visit every node one time?
+// Ex. looking if a value is in an unordered tree
+
+// breadth first approach: working along tree horizontally (by sibling)
+// depth first: going down the tree vertically then back up
+
+// BREADTH FIRST SEARCH
 

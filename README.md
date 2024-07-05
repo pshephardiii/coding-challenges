@@ -140,3 +140,7 @@ If the number of students who have an arrival time <= 0 is above the threshold (
 ## Challenge 31: circularArrayRotation
 For every rotation, every element of array increases its index position by 1 and the final element becomes the first.
 - Given a set number of rotations, return the elements at the given indices of the rotated array.
+
+## Challenge 32: appendAndDelete
+Check if a string s can become string t in exactly k moves
+- The only moves available are adding a string to the end of s or taking one off.  If deletion is used on an empty string, return an empty string and still counts

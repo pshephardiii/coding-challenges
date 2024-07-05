@@ -753,3 +753,49 @@ function circularArrayRotation(a, k, queries) {
     }
     return result
  }
+
+ // Challenge 32
+
+ function appendAndDelete(s, t, k) {
+    let count = 0
+    let index = 0
+    let sArr = s.split('')
+    let tArr = t.split('')
+  
+    while (count < k) {
+        // This is to account for cases where the empty string trick is employed to get the count number to exactly the difference between k and count before adding back to s
+        if (sArr.length === 0 && (k - count) >= tArr.length) {
+            return "Yes"
+        }
+        // If diff is odd and the difference between diff and the length of s is less than the length of t, there will be no way to get s to t in the exact number of steps
+        // Ex. if diff = 1, s = yu, and t = yu, There's be no way to get s to t in one move
+        if (sArr.join('') === tArr.join('')) {
+            let diff = k - count
+            if (diff % 2 !== 0 && diff - sArr.length < tArr.length) {
+                return "No"
+            } else {return "Yes"}
+        }
+        // If the strings are the same at this index, increase index only
+        else if (sArr[index] === tArr[index]) {
+            index++
+        // If there's no character in s at this index, push the character from that index in t
+        } else if (!sArr[index]) {
+            sArr.push(tArr[index])
+            count++
+        // If there's no character in t at that index, s is currently longer than t, so we splice s down to be the same length as t and increase count by as many steps as that takes
+        } else if (!tArr[index]) {
+            count += (sArr.length - index)
+            sArr.splice(index, sArr.length - index)
+        // This will trigger if there are characters in both s and t at the index but they aren't the same.  In this case, we need to splice all of the characters from s in the range of the index to the end of the list, as we can only add new characters on to the end.
+        } else {
+            count += (sArr.length - index)
+            sArr.splice(index, sArr.length - index)
+        }
+    }
+
+    // If we make it here, the while loop has ended without hitting any of the returns, so count is no longer less than k.  We check if the two strings are the same and if count is equal to k.  If either is false, it's impossible to make s into t in k moves.
+    if (sArr.join('') === tArr.join('') && count === k) {
+        return "Yes"
+    }
+    return "No"
+}
