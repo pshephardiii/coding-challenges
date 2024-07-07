@@ -34,6 +34,14 @@
 // Searching: O(log n)
 // Worst case... O(N) if it's a completely one sided tree (only one super long branch)
 
+// TREE TRAVERSAL (trees in general)
+
+// how do we visit every node one time?
+// Ex. looking if a value is in an unordered tree
+
+// breadth first approach: working along tree horizontally (by sibling)
+// depth first: going down the tree vertically then back up
+
 // BINARY SEARCH TREE CLASS
 
 class BinarySearchTree {
@@ -87,6 +95,35 @@ class BinarySearchTree {
         }
         return found
     }
+
+    // BREADTH FIRST SEARCH
+
+    // Create a queue (this can be an array) and a variable to store the values of nodes visited
+
+    // Loop as long as there is anything in the queue
+    // Check for left and right property on each dequeued node
+    // Return variable that stores all of our values
+
+    BFSearch() {
+
+        let node = this.root
+        let queue = []
+        let visited = []
+    
+        queue.push(this.root)
+    
+        while (queue.length > 0) {
+            node = queue.shift()
+            visited.push(node.val)
+            if (node.left) {
+                queue.push(node.left)
+            }
+            if (node.right) {
+                queue.push(node.right)
+            }
+        }
+        return visited
+    }
 }
 
 class Node {
@@ -104,15 +141,11 @@ tree.insert(7)
 tree.insert(4)
 tree.insert(3)
 tree.insert(1200)
-console.log(tree.find(120))
 
-// TREE TRAVERSAL (trees in general)
+console.log(tree.BFSearch())
 
-// how do we visit every node one time?
-// Ex. looking if a value is in an unordered tree
 
-// breadth first approach: working along tree horizontally (by sibling)
-// depth first: going down the tree vertically then back up
 
-// BREADTH FIRST SEARCH
+
+
 
