@@ -4,8 +4,8 @@
 // Ex. 1 -> 2 -> 3 -> 4 -> 5 rotated by two would be 3 -> 4-> 5 -> 1 -> 2
 
 // within singly linked list class:
-
-rotate(num) {
+// *** writing "function" to avoid error, but wouldn't in actual implementation ***
+function rotate(num) {
     let count = 0
     if (num >= 0) {
 
@@ -30,7 +30,8 @@ rotate(num) {
            let prevHead = this.head
            let prevTail = this.tail
            let current = this.head
-           // Need to loop to get the second to last node... this will hurt time complexity, but only with negative nums
+           // Need to loop to get the second to last node... this will hurt time complexity, but only with negative nums.  
+           // This method would be easier to implement with doubly linked list
            for (let i = 1; i < this.length - 1; i++) {
                current = current.next
            }
