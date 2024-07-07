@@ -43,16 +43,58 @@ class MaxBinaryHeap {
         return this
     }
 
-    // extractMax() {
+    extractMax() {
+        let removedMax = this.vals[0]
+        this.vals[0] = this.vals[this.vals.length - 1]
+        this.vals.pop()
 
-    // }
+        // If array is empty or has one value after pop, no need to run the rest of the function
+        if (this.vals.length <= 1) {
+            return removedMax
+        }
+        let index = 0
+        let leftChildIndex = 1
+        let rightChildIndex = 2
+
+        // while the swapped value is less than either of its children, get swapping
+        // Won't run if the child indices extend beyond the length of the array, as then their values become undefined and the while condition will fail by default... this will happen if the swapped value has no children
+        while (this.vals[index] < this.vals[leftChildIndex] || this.vals[index] < this.vals[rightChildIndex]) {
+
+            let temp = this.vals[index]
+
+            // if the swapped value is less than the left child and the left child is greater than its sibling, swap the value with the left child
+            if (this.vals[index] < this.vals[leftChildIndex] && this.vals[leftChildIndex] > this.vals[rightChildIndex]) {
+                this.vals[index] = this.vals[leftChildIndex]
+                this.vals[leftChildIndex] = temp
+                index = leftChildIndex
+
+            // Otherwise, either the swapped value is greater than the left but not the right or it is less than both but the right child is the greater sibling, so swap with the right child instead
+            } else {
+                this.vals[index] = this.vals[rightChildIndex]
+                this.vals[rightChildIndex] = temp
+                index = rightChildIndex
+            }
+                                  
+            // Update the child index variables based on the new index
+            leftChildIndex = 2 * index + 1
+            rightChildIndex = 2 * index + 2
+
+        }
+        return removedMax
+    }
 }
 
 let heap = new MaxBinaryHeap()
-console.log(heap.insert(1))
-console.log(heap.insert(2))
-console.log(heap.insert(40))
-console.log(heap.insert(3))
-console.log(heap.insert(33))
-console.log(heap.insert(35))
-console.log(heap.insert(100))
+
+heap.insert(2)
+// heap.insert(40)
+// heap.insert(100)
+// heap.insert(33)
+// heap.insert(35)
+// heap.insert(3)
+// heap.insert(10)
+// heap.insert(25)
+heap.insert(1)
+
+console.log(heap.extractMax())
+console.log(heap)
