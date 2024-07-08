@@ -17,6 +17,7 @@
 
 // Big O:
 // insert, deletion, access: O(1) - average case
+// if it's a bad hash function, could be O(n)
 
 // What makes a good hash? (not a crytpographically secure one)
 // Fast (constant time)
