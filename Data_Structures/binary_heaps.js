@@ -120,9 +120,6 @@ class PriorityQueue {
         let index = this.vals.length - 1
         let parentIndex = Math.floor((index - 1) / 2)
         let parent = this.vals[parentIndex]
-        if (!parent) {
-            return this
-        }
         // Keep swapping the new node with its parent until the parent is a higher priority
         while(parent && newNode.priority < parent.priority) {
             let temp = this.vals[index]
