@@ -52,3 +52,14 @@ function hash(key, arrayLen) {
 
 // handling collisions:
 
+// two strategies:
+
+// 1. separate chaining
+// at each index in our array we store values using a more sophisticated data structure (like an array or a linked list)
+// We can store multiple key-value pairs at the same position
+
+// 2. Linear probing
+// only store one piece of data at each position
+// when we find a collision, we search through the array to find the next empty slot
+
+// We'll use separate chaining
