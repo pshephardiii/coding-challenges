@@ -85,6 +85,15 @@ class Graph {
             )
         }
     }
+
+    removeVertex(vertex) {
+        let i = 0
+        while (this.adjacencyList[vertex].length !== 0) {
+            let secondVertex = this.adjacencyList[vertex][i]
+            this.removeEdge(vertex, secondVertex)
+        }
+        delete this.adjacencyList[vertex]
+    }
 }
 
 let graph = new Graph()
@@ -93,5 +102,6 @@ graph.addVertex('times')
 graph.addVertex('life')
 graph.addEdge('fun', 'times')
 graph.addEdge('fun', 'life')
-graph.removeEdge('fun', 'times')
+graph.addEdge('times', 'life')
+graph.removeVertex('fun')
 console.log(graph)
