@@ -54,3 +54,22 @@
 // Matrix: takes up more space, slower to iterate over all edges, faster to lookup specific edge
 
 // For our purposes, we'll use the adjacency list, as data tends to be sparse in the real world
+
+// Graph Class (undirected):
+
+class Graph {
+    constructor() {
+        this.adjacencyList = {}
+    }
+
+    addVertex(vertex) {
+        if (!this.adjacencyList[vertex]) {
+            this.adjacencyList[vertex] = []
+        }
+    }
+}
+
+let graph = new Graph()
+graph.addVertex('fun')
+
+console.log(graph)
