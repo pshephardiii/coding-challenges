@@ -67,9 +67,18 @@ class Graph {
             this.adjacencyList[vertex] = []
         }
     }
+    // order would matter if we were making a directed graph
+    addEdge(vertex1, vertex2) {
+        if (this.adjacencyList[vertex1] && this.adjacencyList[vertex2]) {
+            this.adjacencyList[vertex1].push(vertex2)
+            this.adjacencyList[vertex2].push(vertex1)
+        }
+    }
 }
 
 let graph = new Graph()
 graph.addVertex('fun')
+graph.addVertex('times')
+graph.addEdge('fun', 'times')
 
 console.log(graph)
