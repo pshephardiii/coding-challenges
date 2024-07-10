@@ -144,3 +144,10 @@ For every rotation, every element of array increases its index position by 1 and
 ## Challenge 32: appendAndDelete
 Check if a string s can become string t in exactly k moves
 - The only moves available are adding a string to the end of s or taking one off.  If deletion is used on an empty string, return an empty string and still counts
+
+## Challenge 33: libraryFine
+- given a return date and a due date, calculate the fine
+- if returned before or at due date, no charge
+- if same month but day is after due date, 15 * number of days late
+- if same year but month is after due date, 500 * number of months late
+- if more than a year late, fixed fine of 10000
