@@ -152,8 +152,24 @@ class Graph {
     }
 
     // Check all of the original node's neighbors before moving on down the line
-    BreadthFirst(vertex) {
+    breadthFirst(startingVertex) {
+        let queue = [startingVertex]
+        let result = []
+        let visited = {}
+        let vertex = null
+        visited[startingVertex] = true
 
+        while (queue.length) {
+            vertex = queue.shift()
+            result.push(vertex)
+            this.adjacencyList[vertex].forEach(neighbor => {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true
+                    queue.push(neighbor)
+                }
+            })
+        }
+        return result
     }
 }
 
@@ -174,8 +190,7 @@ g.addEdge("D","F")
 g.addEdge("E","F")
 console.log(g)
 
-console.log(g.iterativeDFS("A"))
-
+console.log(g.breadthFirst("A"))
 
 // Graph Traversal
 
