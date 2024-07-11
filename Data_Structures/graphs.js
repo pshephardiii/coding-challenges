@@ -127,6 +127,34 @@ class Graph {
         DFS(startingVertex)
         return result
     }
+
+    // iterate using a stack for depth first search
+    iterativeDFS(startingVertex) {
+        let stack = [startingVertex]
+        let result = []
+        let visited = {}
+        let vertex = null
+
+        visited[startingVertex] = true
+        
+        while (stack.length) {
+            vertex = stack.pop()
+            result.push(vertex)
+            // For each neighbor of the most recently popped vertex, check to see if they have been visited
+            this.adjacencyList[vertex].forEach(neighbor => {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true
+                    stack.push(neighbor)
+                }
+            })
+        }
+        return result
+    }
+
+    // Check all of the original node's neighbors before moving on down the line
+    BreadthFirst(vertex) {
+
+    }
 }
 
 let g = new Graph()
@@ -146,7 +174,8 @@ g.addEdge("D","F")
 g.addEdge("E","F")
 console.log(g)
 
-console.log(g.RecursiveDFS("A"))
+console.log(g.iterativeDFS("A"))
+
 
 // Graph Traversal
 
