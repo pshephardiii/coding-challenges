@@ -94,14 +94,68 @@ class Graph {
         }
         delete this.adjacencyList[vertex]
     }
+
+    // Graph traversal - depth first search - recursive
+    RecursiveDFS(startingVertex) {
+        // array to store final result of traversed nodes in order
+        let result = []
+        // object to keep track of which nodes have already been visited
+        let visited = {}
+        // need a variable for the adjacency list so that it can be accessed in the helper function
+        let adjList = this.adjacencyList
+
+        // helper recursive function
+        function DFS(vertex) {
+            // If there's no vertex, just return
+            if (!vertex) {
+                return null
+            }
+
+            // Add vertex as a key into visited with the value true
+            visited[vertex] = true
+            // Push vertex into result array
+            result.push(vertex)
+
+            // Use a for each loop to check if the vertex's neighbors are in the visited object.  If they are not, return the recursive function with those unvisited vertices
+            // Needed a for each here... if you use simple for loop, it will stop the loop after the first return of the recursive function, but we need to check every neighbor
+            adjList[vertex].forEach(neighbor => {
+                if (!visited[neighbor]) {
+                    return DFS(neighbor)
+                }
+            })
+        }
+        DFS(startingVertex)
+        return result
+    }
 }
 
-let graph = new Graph()
-graph.addVertex('fun')
-graph.addVertex('times')
-graph.addVertex('life')
-graph.addEdge('fun', 'times')
-graph.addEdge('fun', 'life')
-graph.addEdge('times', 'life')
-graph.removeVertex('fun')
-console.log(graph)
+let g = new Graph()
+g.addVertex("A")
+g.addVertex("B")
+g.addVertex("C")
+g.addVertex("D")
+g.addVertex("E")
+g.addVertex("F")
+
+g.addEdge("A","B")
+g.addEdge("A","C")
+g.addEdge("B","D")
+g.addEdge("C","E")
+g.addEdge("D","E")
+g.addEdge("D","F")
+g.addEdge("E","F")
+console.log(g)
+
+console.log(g.RecursiveDFS("A"))
+
+// Graph Traversal
+
+// Visiting every vertex in a graph/updating/checking
+
+// Uses: peer to peer networking, web crawlers, finding "closest" matches/recommendations
+// Shortest path problems: GPS navigation, solving mazes, AI
+
+// Depth first search
+// Explore as far as possible down one branch before backtracking
+
+// See class above for methods!
