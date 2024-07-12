@@ -205,10 +205,18 @@ let wg = new Graph()
 wg.addVertex("A")
 wg.addVertex("B")
 wg.addVertex("C")
+wg.addVertex("D")
+wg.addVertex("E")
+wg.addVertex("F")
 
-wg.addEdgeWeighted("A","B", 9)
-wg.addEdgeWeighted("A","C", 5)
-wg.addEdgeWeighted("B","C", 7)
+wg.addEdgeWeighted("A","B", 4)
+wg.addEdgeWeighted("A","C", 2)
+wg.addEdgeWeighted("B", "E", 3)
+wg.addEdgeWeighted("C", "D", 2)
+wg.addEdgeWeighted("C", "F", 4)
+wg.addEdgeWeighted("D", "E", 3)
+wg.addEdgeWeighted("D", "F", 1)
+wg.addEdgeWeighted("E", "F", 1)
 
 console.log(wg.adjacencyList)
 
@@ -233,3 +241,10 @@ console.log(wg.adjacencyList)
 
 // Weighted graph add-ons: see class above
 
+// Dijkstra's: basic idea
+// From starting point, find the closest node
+// From the new node, check how far each of its neighbors are
+// For each neighboring node, calculate distance by summing the total edges that lead to that node from the starting node
+// If new total distance to a node is less than the previous total, we store the new shorter distance for that node
+// Eventually, we'll have the shortest distance from the starting node to every node, including the target node.
+// This distance will trace the shortest distance to each node along the way
