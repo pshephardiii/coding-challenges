@@ -183,11 +183,12 @@ class Graph {
         return result
     }
 
+    // updated with the binary heap priority queue
     shortestDistance(start, end) {
         // to keep track of minimum distances from start to each node
         let distances = {}
         
-        let q = new PriorityQueue()
+        let q = new UpgradedPriorityQueue()
 
         // keep track of the path of shortest distance to each node...
         // That is, for each node, track the node previous
@@ -207,7 +208,7 @@ class Graph {
             previous[key] = null
         }
         
-        while (q.values.length > 0) {
+        while (q.vals.length > 0) {
             smallest = q.dequeue().val
             // Check if dequeued is the end point
             if (smallest === end) {
@@ -259,7 +260,90 @@ class PriorityQueue {
     sort() {
       this.values.sort((a, b) => a.priority - b.priority);
     };
-  }
+}
+
+// This is the upgraded priority queue from the binary heaps section
+class UpgradedPriorityQueue {
+    constructor() {
+        this.vals = []
+    }
+
+    enqueue(val, priority) {
+        let newNode = new Node(val, priority)
+        this.vals.push(newNode)
+        let index = this.vals.length - 1
+        let parentIndex = Math.floor((index - 1) / 2)
+        let parent = this.vals[parentIndex]
+        // Keep swapping the new node with its parent until the parent is a higher priority
+        // This is a bit confusing, because the lower the priority number, the higher the priority.
+        while(parent && newNode.priority < parent.priority) {
+            let temp = this.vals[index]
+            this.vals[index] = this.vals[parentIndex]
+            this.vals[parentIndex] = temp
+            index = parentIndex
+            parentIndex = Math.floor((index - 1) / 2)
+            parent = this.vals[parentIndex]
+        }
+        return this
+    }
+
+    dequeue() {
+        let topPriority = this.vals[0]
+        this.vals[0] = this.vals[this.vals.length - 1]
+        this.vals.pop()
+
+        // If array is empty or has one value after pop, no need to run the rest of the function
+        if (this.vals.length <= 1) {
+            return topPriority
+        }
+        let index = 0
+        let leftChildIndex = 1
+        let rightChildIndex = 2
+
+        let current = this.vals[index]
+        let leftChild = this.vals[leftChildIndex]
+        let rightChild = this.vals[rightChildIndex]
+
+        // while the swapped value is less than either of its children, get swapping
+        // Need to check if children are undefined to avoid error
+        while ((leftChild && current.priority > leftChild.priority) || (rightChild && current.priority > rightChild.priority)) {
+
+            let temp = current
+
+            // logic here is a bit much, but the idea is that left child must not be undefined, it must have a higher priority than current, and either the right child is undefined or not as highly prioritized as the left child.  If all of those conditions are met, swap the current with the left child.
+            if ((leftChild && current.priority > leftChild.priority) && (!rightChild || leftChild.priority < rightChild.priority)) {
+
+                this.vals[index] = this.vals[leftChildIndex]
+                this.vals[leftChildIndex] = temp
+                index = leftChildIndex
+                current = this.vals[index]
+
+            // Otherwise, either the left child is undefined, the current is a higher priority than left, or the right child is a higher priority than the left.  In any case, need to swap current with right child.
+            } else {
+
+               this.vals[index] = this.vals[rightChildIndex]
+               this.vals[rightChildIndex] = temp
+               index = rightChildIndex
+               current = this.vals[index]
+            }
+                                  
+            // Update the child variables based on the new index
+            leftChildIndex = 2 * index + 1
+            rightChildIndex = 2 * index + 2
+            leftChild = this.vals[leftChildIndex]
+            rightChild = this.vals[rightChildIndex]
+
+        }
+        return topPriority
+    }
+}
+
+class Node {
+    constructor(val, priority) {
+        this.val = val
+        this.priority = priority
+    }
+}
 
 let g = new Graph()
 g.addVertex("A")
