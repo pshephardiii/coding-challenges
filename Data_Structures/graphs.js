@@ -68,6 +68,7 @@ class Graph {
         }
     }
     // order would matter if we were making a directed graph
+    // Does not account for weighted graph as wwritten
     addEdge(vertex1, vertex2) {
         if (this.adjacencyList[vertex1] && this.adjacencyList[vertex2]) {
             this.adjacencyList[vertex1].push(vertex2)
@@ -75,6 +76,15 @@ class Graph {
         }
     }
 
+    // For weighted graph
+    addEdgeWeighted(vertex1, vertex2, weight) {
+        if (this.adjacencyList[vertex1] && this.adjacencyList[vertex2]) {
+            this.adjacencyList[vertex1].push({node:vertex2, weight})
+            this.adjacencyList[vertex2].push({node:vertex1, weight})
+        }
+    }
+
+    // Does not account for weighted graph as written
     removeEdge(vertex1, vertex2) {
         if (this.adjacencyList[vertex1] && this.adjacencyList[vertex2]) {
             this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(
@@ -86,6 +96,7 @@ class Graph {
         }
     }
 
+    // Does not account for weighted graph as written
     removeVertex(vertex) {
         let i = 0
         while (this.adjacencyList[vertex].length !== 0) {
@@ -188,9 +199,18 @@ g.addEdge("C","E")
 g.addEdge("D","E")
 g.addEdge("D","F")
 g.addEdge("E","F")
-console.log(g)
 
-console.log(g.breadthFirst("A"))
+
+let wg = new Graph()
+wg.addVertex("A")
+wg.addVertex("B")
+wg.addVertex("C")
+
+wg.addEdgeWeighted("A","B", 9)
+wg.addEdgeWeighted("A","C", 5)
+wg.addEdgeWeighted("B","C", 7)
+
+console.log(wg.adjacencyList)
 
 // Graph Traversal
 
