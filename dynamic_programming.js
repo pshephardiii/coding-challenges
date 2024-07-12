@@ -26,9 +26,9 @@
 
 // calculating fibonacci numbers with recursion
 
-function fib(n) {
+function fibBad(n) {
     if (n <= 2) return 1
-    return fib(n-1) + fib(n-2)
+    return fibBad(n-1) + fibBad(n-2)
 }
 
 // Big O of simple recursion solution
@@ -37,4 +37,24 @@ function fib(n) {
 // O(2 ^ N)... even worse than quadratic!
 
 // What's the problem?
-// Spoiler: we aren't reusing solutions to subproblems (we are calculating fib(3) a TON to get to, say, fib(30))
+// Spoiler: we aren't reusing solutions to subproblems (we are calculating fib(5) a TON to get to, say, fib(30))
+
+// MEMOIZATION
+
+// storing the results of expensive function calls and returning the cached result when the same inputs occur again
+
+function fib(n, memo=[]) {
+    // we have saved results from previous subproblems, so check if we have solved a problem and return the solution if we have
+    if(memo[n] !== undefined) return memo[n]
+    // the first two fib numbers are 1, so return 1 if n is either
+    if (n <= 2) return 1
+    // define res as the addition of two previous fib numbers, but input the current memo so that we can check if for stored solutions for those numbers
+    let res = fib(n - 1, memo) + fib(n - 2, memo)
+    // set the memo at the index of the current n to be res, which triggers the recursive calling of the function on the two previous fib numbers, checking the memo for their solutions, and on and on
+    memo[n] = res
+    // we return res, which won't happen until all of the solutions to the subproblems have been recorded in memo along with the overarching solution for our original input
+    return res
+}
+
+// Big O:
+// O(N)... much better
