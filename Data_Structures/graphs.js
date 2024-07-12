@@ -182,7 +182,84 @@ class Graph {
         }
         return result
     }
+
+    shortestDistance(start, end) {
+        // to keep track of minimum distances from start to each node
+        let distances = {}
+        
+        let q = new PriorityQueue()
+
+        // keep track of the path of shortest distance to each node...
+        // That is, for each node, track the node previous
+        let previous = {}
+        // This will be returned
+        let path = []
+        let smallest = null
+        // build up initial state
+        for (let key in this.adjacencyList) {
+            if (key === start) {
+                distances[key] = 0
+                q.enqueue(key, 0)
+            } else {
+                distances[key] = Infinity
+                q.enqueue(key, Infinity)
+            }
+            previous[key] = null
+        }
+        
+        while (q.values.length > 0) {
+            smallest = q.dequeue().val
+            // Check if dequeued is the end point
+            if (smallest === end) {
+                // push values from previous into path
+                while (previous[smallest]) {
+                    path.push(smallest)
+                    // this is how smallest gets assigned to starting value
+                    smallest = previous[smallest]
+                }
+                break
+            }
+            // Loop through the neighboring nodes of the dequeued node
+            for (let index in this.adjacencyList[smallest]) {
+                // index is just the index of the node, so we need to set the adjacent node in a variable here
+                let nextNode = this.adjacencyList[smallest][index]
+                // Check the distance to the dequeued node plus the weight of the adjacent node
+                let candidate = distances[smallest] + nextNode.weight
+                // nextItem will be the value of the next node
+                let nextItem = nextNode.node
+                // If the current distance to the next node is more than our candidate distance, make the candidate the new shortest path
+                if (candidate < distances[nextItem]) {
+                    // update distance to next item
+                    distances[nextItem] = candidate
+                    // update the previous node for the next item
+                    previous[nextItem] = smallest
+                    // Throw the updated next item on the queue to eventually be dequeued 
+                    q.enqueue(nextItem, candidate)
+                }
+              
+            }
+        }
+        // Add the starting point to path then reverse it to see path from start to end
+        return path.concat(smallest).reverse()
+    }
 }
+
+// simple priority queue
+class PriorityQueue {
+    constructor(){
+      this.values = [];
+    }
+    enqueue(val, priority) {
+      this.values.push({val, priority});
+      this.sort();
+    };
+    dequeue() {
+      return this.values.shift();
+    };
+    sort() {
+      this.values.sort((a, b) => a.priority - b.priority);
+    };
+  }
 
 let g = new Graph()
 g.addVertex("A")
@@ -218,7 +295,7 @@ wg.addEdgeWeighted("D", "E", 3)
 wg.addEdgeWeighted("D", "F", 1)
 wg.addEdgeWeighted("E", "F", 1)
 
-console.log(wg.adjacencyList)
+console.log(wg.shortestDistance("A", "E"))
 
 // Graph Traversal
 
@@ -248,3 +325,5 @@ console.log(wg.adjacencyList)
 // If new total distance to a node is less than the previous total, we store the new shorter distance for that node
 // Eventually, we'll have the shortest distance from the starting node to every node, including the target node.
 // This distance will trace the shortest distance to each node along the way
+
+// See shortestDistance method above!
