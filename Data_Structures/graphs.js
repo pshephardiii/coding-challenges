@@ -203,3 +203,13 @@ console.log(g.breadthFirst("A"))
 // Explore as far as possible down one branch before backtracking
 
 // See class above for methods!
+
+// Dijkstra's Algorithm:
+
+// ** involves a priority queue from binary heaps section ***
+
+// Find the shortest path between two vertices on a weighted graph (this is what I thought it was)
+// Use cases: GPS, network routing, biology (models spread of viruses among humans), airline tickets, etc.
+
+// Weighted graph add-ons: see class above
+
