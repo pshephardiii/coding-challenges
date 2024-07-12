@@ -58,3 +58,25 @@ function fib(n, memo=[]) {
 
 // Big O:
 // O(N)... much better
+
+// TABULATION - bottom up approach
+
+// This is how I did fib before!
+
+// storing the result of a previous result in a "table" (usually an array)...
+// usually done using iteration
+// Better space complexity can be achieved using tabulation
+
+function fibTab(n) {
+    if (n <= 2) return 1
+    let fibNums = [0, 1, 1]
+    // i keeps will keep track of which fib number we are on past the first two
+    // stop once i exceeds n
+    for (let i = 3; i <= n; i++) {
+        // for instance, fibNums[3] will be 1 + 1 given our fibNums array
+        fibNums[i] = fibNums[i - 1] + fibNums [i - 2]
+    }
+    return fibNums[n]
+}
+
+// time complexity is still O(N), but better with space complexity
