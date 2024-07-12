@@ -22,3 +22,19 @@
 // another example: shortest path
 // To get the shortest path from A to E, you need to start by finding the shortest path to, say, A to B, then B to some other node, ending at E.  It works like the loop in Dijkstra's algorith... to find the shortest overall path, need to find shortest path for every step along the way
 
+// Problem without dynamic programming:
+
+// calculating fibonacci numbers with recursion
+
+function fib(n) {
+    if (n <= 2) return 1
+    return fib(n-1) + fib(n-2)
+}
+
+// Big O of simple recursion solution
+
+// it's very slow!
+// O(2 ^ N)... even worse than quadratic!
+
+// What's the problem?
+// Spoiler: we aren't reusing solutions to subproblems (we are calculating fib(3) a TON to get to, say, fib(30))
